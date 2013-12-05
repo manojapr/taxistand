@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
+  #before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-    	flash[:success] = "Welcome to the Greentaxi. Register your vehicle here"
+    	flash[:success] = "Welcome to the Taxistand. Customize your home page here"
       redirect_to @user
     else
       render 'new'
@@ -39,7 +39,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+
+
+    #@users = User.paginate(page: params[:page]).order(:quote)
+    @users = User.order(:quote)
+
+    @users = @users.select { |v| v.location == params[:location] } if !params[:location].blank?
+    
   end
 
   def destroy
@@ -51,7 +57,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :email, :vehicle, :location, :quote, :password,
                                    :password_confirmation)
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119192543) do
+ActiveRecord::Schema.define(version: 20131205152320) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20131119192543) do
 
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
+  create_table "reviews", force: true do |t|
+    t.text     "author"
+    t.text     "content"
+    t.integer  "rating"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -30,6 +41,9 @@ ActiveRecord::Schema.define(version: 20131119192543) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.text     "vehicle"
+    t.text     "location"
+    t.integer  "quote"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,9 +1,14 @@
 Greentaxi::Application.routes.draw do
-  resources :users
+  
+
+  resources :users do
+    resources :reviews
+  end
+  
   resources :sessions,   only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   
-  root  'static_pages#home'
+  root  'users#index'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
