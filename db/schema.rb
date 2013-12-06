@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205152320) do
+ActiveRecord::Schema.define(version: 20131206174958) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131205152320) do
     t.text     "vehicle"
     t.text     "location"
     t.integer  "quote"
+    t.integer  "contact"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

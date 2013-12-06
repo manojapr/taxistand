@@ -1,10 +1,14 @@
 <% provide(:title, 'All users') %>
+
+<div class="center hero-unit">
+<h1> Where you would like to be picked up </h1>
+
 <form method="get">
 <% @options = User.all.map { |a|  a.location } %>
 <%= select_tag("location", options_for_select(@options)) %>
-<input type="submit" value="Filter" />
+<input type="submit" value="Find Taxi" />
 
-
+</div>
 
 
 

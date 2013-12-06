@@ -5,6 +5,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= @user.contact %>
         <%= @user.vehicle %>
         <%= @user.location %>
         <%= @user.quote %>
@@ -27,8 +28,9 @@
 <P>
   <b><%= review.author %> </b></br>
   <%= review.content %></Br>
+  
   <% review.rating.to_i.times do %>
-     <%= image_tag "star.png", :size => "25x25" %>
+     <%= image_tag "star-green.png", :size => "20x20" %>
   <% end %>
   <p>
 <% end %>
