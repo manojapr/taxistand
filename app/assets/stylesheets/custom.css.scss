@@ -1,6 +1,8 @@
 @import "bootstrap";
 /* universal */
 
+
+
 html {
   overflow-y: scroll;
 }
@@ -31,19 +33,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 5em;
+  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
+  color: #777;
+}
+
+h3 {
+  font-size: 1.9em;
+  letter-spacing: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #777;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: #777;
 }
 
 p {
@@ -57,8 +68,8 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: white;
+  text-transform: capitalize;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -66,21 +77,22 @@ p {
 }
 
 #logo:hover {
-  color: green;
+  color: none;
   text-decoration: none;
 }
 
 /* Nav bar color*/
 
 .navbar-inverse .navbar-inner {
-  background-color: #FFFF00; /* it's flat*/
+  background-color: #0000CC; /* it's flat*/
  background-image: none;
+
 }
 
 .navbar-inverse .navbar-inner {
-  background-image: -ms-linear-gradient(top, #FFFF00, #FFFF00);
-  background-image: -webkit-linear-gradient(top, #FFFF00, #FFFF00);
-  background-image: linear-gradient(to bottom, #FFFF00, #FFFF00);
+  background-image: -ms-linear-gradient(top, #0000CC, #0000CC);
+  background-image: -webkit-linear-gradient(top, #0000CC, #0000CC);
+  background-image: linear-gradient(to bottom, #0000CC, #0000CC);
 }
 
 /* footer */
@@ -88,7 +100,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 5px solid #eaeaea;
   color: #999;
 }
 
@@ -178,14 +190,14 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: Black;
-  text-transform: uppercase;
+  color: white;
+  
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: gray;
     text-decoration: none;
   }
 }
@@ -308,6 +320,10 @@ input {
     }
   }
 }
+
+/* table head */
+
+
 /* microposts */
 
 .microposts {
@@ -335,3 +351,37 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+.jumbotron {
+     
+     background: #F0F0F0 ;
+     padding: 5px;
+     margin-bottom: 5px;
+     border-radius: 5px;
+     
+     
+     box-shadow: 5px 5px 5px #888888;
+
+ }
+
+#searchbutton {
+  
+text-indent: 0;
+text-align: center;
+height: auto;
+width: 135px;
+cursor: pointer;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding: 3px 0px 4px 0px;
+font-size: 14px;
+color: Black;
+text-shadow: 1px 1px 6px #333;
+line-height: 18px;
+border: 1px solid #333;
+background: none;
+background-color: Yellow;
+background: -moz-linear-gradient(top, rgba(225,34,8,0.65) 0%, rgba(255,0,0,0.83) 50%, rgba(255,0,0,0.83) 51%, rgba(225,34,8,1) 100%);
+}
+
