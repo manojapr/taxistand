@@ -1,26 +1,16 @@
 <% provide(:title, 'All users') %>
 
 
-<h3> India's first virtual taxistand. Now hire a taxi with least price without an advance booking!</h3>
 
-  
-<div class="center jumbotron ">
-  
 
-<h4> Where you would like to be picked up </h4>
 
-<form method="get">
-<% @options = User.all.map { |a|  a.location } %>
-<div class="row">
-<div class="span6 offset3" >
-<%= select_tag("location", options_for_select(@options)) %>
-</div>
-</div>
 
-<input type="submit" value="Search Taxi", class="btn btn-primary btn-lg"  />
-</form>
 
-</div>
+
+
+
+
+
 
 
 </br>
@@ -49,6 +39,9 @@
   <%= render @users %>
 </ul>
  </table>
+
+
+
 
 
 

@@ -42,9 +42,10 @@ class UsersController < ApplicationController
 
 
     #@users = User.paginate(page: params[:page]).order(:quote)
-    @users = User.order(:quote)
+    #@users = User.order(:quote)
 
-    @users = @users.select { |v| v.location == params[:location] } if !params[:location].blank?
+    #@users = @users.select { |v| v.location == params[:location] } if !params[:location].blank?
+    @users = User.order(:quote).search(params[:search])
     
   end
 

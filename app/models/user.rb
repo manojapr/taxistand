@@ -14,6 +14,14 @@ class User < ActiveRecord::Base
  
   validates :password, length: { minimum: 6 }
 
+def self.search(search)
+  if search
+    find(:all, :conditions => ['location LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
