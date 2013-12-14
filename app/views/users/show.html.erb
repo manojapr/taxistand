@@ -1,14 +1,48 @@
 <% provide(:title, @user.name) %>
+<h1>
+  
+        <%= @user.name %></br>
+
+
+        
+  </h1>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <%= @user.contact %>
-        <%= @user.vehicle %>
-        <%= @user.location %>
-        <%= @user.quote %>
+       
+        <p>
+        <div >
+        <%= image_tag  @user.image_url(:thumb) if @user.image? %>
+        </div>
+        </p>
+        
+        <p>
+          Contact: <%=   @user.contact %></br>
+        </P>
+        <p>
+          Vehicle: <%=  @user.vehicle %></br>
+        </P>
+        <p>
+          Base Location: <%= @user.location %></br>
+        </p>
+        <p>
+          Offered Price: <%=  @user.quote %></br>
+        </p>
+
+
+
+        
+        
+
+
+
+
+        
+        
+        
+        
+        
 
       </h1>
     </section>
@@ -23,6 +57,18 @@
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+<p>
+  <h4>
+  Reviews about this Taxi
+</h4>
+</p>
+
 
 <% @user.reviews.each do |review| %>
 <P>
@@ -39,28 +85,24 @@
 <%= form_for([@user, @user.reviews.build]) do |f| %>
   
 
-  <div class="field">
+  <div class="field input-large">
     <%= f.label :author %><br>
-    <%= f.text_area :author %>
+    <%= f.text_field :author %>
   </div>
-  <div class="field">
+  <div class="field input-xlarge">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content%>
   </div>
-  <div class="field">
+  <div class="field input-mini">
     <%= f.label :rating %><br>
     <%= f.select( :rating, options_for_select(1..10)) %>
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
+  <div >
+    <%= f.submit "Post Review", class: "btn .btn-small btn-primary"  %>
   </div>
 <% end %>
 
 
-<% form_tag users_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+
+

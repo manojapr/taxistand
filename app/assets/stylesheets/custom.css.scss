@@ -56,10 +56,19 @@ h2 {
   font-weight: normal;
   color: #777;
 }
+.profile font{
+  font-size: 5em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: Blue;
+  
+}
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+
 }
 
 /* header */
@@ -98,10 +107,13 @@ p {
 /* footer */
 
 footer {
+
   margin-top: 45px;
   padding-top: 5px;
   border-top: 5px solid #eaeaea;
   color: #999;
+
+  
 }
 
 footer a {
@@ -384,4 +396,8 @@ background: none;
 background-color: Yellow;
 background: -moz-linear-gradient(top, rgba(225,34,8,0.65) 0%, rgba(255,0,0,0.83) 50%, rgba(255,0,0,0.83) 51%, rgba(225,34,8,1) 100%);
 }
+
+
+
+
 
