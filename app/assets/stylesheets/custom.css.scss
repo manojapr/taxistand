@@ -74,6 +74,7 @@ p {
 /* header */
 
 #logo {
+
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -93,18 +94,20 @@ p {
 /* Nav bar color*/
 
 .navbar-inverse .navbar-inner {
-  background-color: #0000CC; /* it's flat*/
+  background-color: #F8F8F8 ; /* it's flat*/
  background-image: none;
 
 }
 
 .navbar-inverse .navbar-inner {
-  background-image: -ms-linear-gradient(top, #0000CC, #0000CC);
-  background-image: -webkit-linear-gradient(top, #0000CC, #0000CC);
-  background-image: linear-gradient(to bottom, #0000CC, #0000CC);
+  background-image: -ms-linear-gradient(top, #F8F8F8 , #F8F8F8 );
+  background-image: -webkit-linear-gradient(top, #F8F8F8, #F8F8F8 );
+  background-image: linear-gradient(to bottom, #F8F8F8, #F8F8F8 );
 }
 
 /* footer */
+
+
 
 footer {
 
@@ -202,14 +205,15 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: #0000CC;
   
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  font-style: monospaces manaco;
   line-height: 1;
   &:hover {
-    color: gray;
+    color: #0000CC;
     text-decoration: none;
   }
 }
@@ -397,7 +401,91 @@ background-color: Yellow;
 background: -moz-linear-gradient(top, rgba(225,34,8,0.65) 0%, rgba(255,0,0,0.83) 50%, rgba(255,0,0,0.83) 51%, rgba(225,34,8,1) 100%);
 }
 
+.line-right {
+
+border-style:dotted solid;
+border-width:1px;
+}
+
+li{
+  font-family:sans-serif;
+  font:italic bold 14px/33px Georgia, serif;
+  Color: Black;
+
+}
+
+.fa-camera-retro {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 4.5em;
+}
+
+#divA
+{
+  float: left;
+  margin-top:20px;
+  margin-left:225px;
+ 
+}
+
+#divB
+{
+  float:left;
+  margin-top:20px;
+  margin-left:90px;
+
+ 
+}
+
+#divc
+{
+  float: left;
+  margin-left:90px;
+  margin-bottom:20px;
+}
+
+#divd
+{
+  float:left;
+  margin-left:140px;
+  margin-bottom:20px;
+ 
+}
 
 
+#profile{
+  float:right;
+  margin-right:520px;
+ 
+  
+}
+
+#app
+{
+  float: left;
+  margin-bottom:20px;
+  margin-left:225px;
+ 
+}
+
+#share
+{
+  float:left;
+  margin-bottom:20px;
+  margin-left:90px;
+
+ 
+}
+
+#signup
+{
+  float: top;
+  margin:3cm 3cm 1cm 15cm;
+  color: red;
+  Background-color: green;
+  width: 10cm;
+
+ 
+}
 
 

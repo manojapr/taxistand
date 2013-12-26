@@ -1,35 +1,52 @@
 <% provide(:title, @user.name) %>
-<h1>
+
+
+  <div id="container">
+    <div id="profile">  
+      <h5> <%= @user.name %></h5>
+          <p>
+
+          <i class="fa fa-star fa-2x"></i> 
+         
+          <%=   @user.contact %>
+          </P>   
+          <i class="fa fa-phone-square fa-2x"></i> 
+         
+          <%=   @user.contact %>
+          <p>
+          Vehicle: <%=  @user.vehicle %></br>
+        </P>
+        <p>
+          <i class="fa fa-map-marker fa-2x"></i>
+          <%= @user.location %></br>
+        </p>
+        <p>
+          <i class="fa fa-inr fa-2x"></i> 
+         
+           <%=  @user.quote %></br>
+        </p>
+        
+
+    </div>
+  </div>
   
-        <%= @user.name %></br>
+        
 
 
         
-  </h1>
+  
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
        
         <p>
-        <div >
+        <div>
         <%= image_tag  @user.image_url(:thumb) if @user.image? %>
         </div>
         </p>
         
-        <p>
-          Contact: <%=   @user.contact %></br>
-        </P>
-        <p>
-          Vehicle: <%=  @user.vehicle %></br>
-        </P>
-        <p>
-          Base Location: <%= @user.location %></br>
-        </p>
-        <p>
-          Offered Price: <%=  @user.quote %></br>
-        </p>
-
+        
 
 
         
@@ -61,32 +78,53 @@
 
 
 
+</br>
+</BR>
 
 
 <p>
   <h4>
-  Reviews about this Taxi
+  All Reviews
 </h4>
 </p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Review</th>
+            <th>Rating</th>
+           
+        </tr>
+   </thead>
+         
 
 
+        
 <% @user.reviews.each do |review| %>
-<P>
-  <b><%= review.author %> </b></br>
-  <%= review.content %></Br>
-  
-  <% review.rating.to_i.times do %>
-     <%= image_tag "star-green.png", :size => "20x20" %>
-  <% end %>
-  <p>
+
+<tbody>
+        <tr>
+            <td><%= review.author %></td>
+            <td><%= review.content %></td>
+            <td><% review.rating.to_i.times do %>
+            <%= image_tag "star-green.png", :size => "20x20" %>
+     
+            <% end %></td>
+            
+        </tr>
+</tbody>
+
 <% end %>
+
+</table>
+
 
 
 <%= form_for([@user, @user.reviews.build]) do |f| %>
   
 
   <div class="field input-large">
-    <%= f.label :author %><br>
+    <%= f.label :Name %><br>
     <%= f.text_field :author %>
   </div>
   <div class="field input-xlarge">
@@ -102,6 +140,9 @@
     <%= f.submit "Post Review", class: "btn .btn-small btn-primary"  %>
   </div>
 <% end %>
+
+
+
 
 
 

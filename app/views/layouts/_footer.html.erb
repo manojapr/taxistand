@@ -1,7 +1,14 @@
 <footer class="footer">
-  <small>
-   Need help, chat with us!
-  </small>
+  <div class="share">
+
+        Connect us on </br>
+      <%= link_to(image_tag("facebook.png", :size => "50x50"), "http://www.facebook.com") %>
+      <%= link_to(image_tag("twitter.png", :size => "45x45"), "http://www.facebook.com") %>
+      <%= link_to(image_tag("googleplus.png", :size => "50x50"), "http://www.facebook.com") %>
+
+
+        
+    </div>
   <nav>
     <ul>
       <li><%= link_to "About",   about_path %></li>
@@ -10,5 +17,7 @@
     </ul>
   </nav>
 </footer>
+
+
 
 

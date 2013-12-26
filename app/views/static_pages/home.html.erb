@@ -1,21 +1,65 @@
   
 
 
+</br>
+</br>
+</Br>
 
 
-<h3> India's first virtual taxistand. Now hire a taxi with least price without an advance booking!</h3>
+<h3> India's first virtual taxistand. Now hire a taxi with least fare without any advance booking!</h3></br>
 
   <div class="center jumbotron">
-    <h4> Where you would like to be picked up </h4>
+
+    
+    <div id="container">
+    <div id="divB">  <h5> Pickup Location </h5> </div>
+    <div id="divA"> <h5> Select Vehicle </h5></div>
+    </div></br></br></br>
+
+ 
+     
     <%= form_tag users_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search], class: 'input-large' %>
+    <div id="container">
+    <div id="divc">  
+ 
+    <%= text_field_tag :search, params[:search], class: 'input-large' %></div>
+    <div id="divd"> 
+  
+    <%= text_field_tag :search, params[:search], class: 'input-large' %></div>
+    </div>
+
+
+
+
+  
+
     <%= submit_tag "Search Taxi", :name => nil, class: "btn btn-small btn-primary" %>
-  </p>
+ 
 
 <% end %>
 
 </div>
+
+
+<div class="container">
+   
+      <div class="app">
+
+        Download our Android App Here
+        <%= link_to(image_tag("appdownload.png", :size => "100x100"), "http://www.facebook.com") %>
+
+        </div>
+ 
+   
+
+    
+</div>
+
+<div id="container">
+    <div id="signup">  <h5> Want to register your vehicle.Sign up here </h5> </div>
+    
+    </div></br></br></br>
+
 
 
 
