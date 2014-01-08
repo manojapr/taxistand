@@ -36,6 +36,20 @@
     <%= f.hidden_field :image_cache %>
      </p>
 
+     <p>
+    <label>Vehicle Image 1</label>
+    <%= image_tag(@user.image_url) if @user.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+     </p>
+
+     <p>
+    <label>Vehicle Image 2</label>
+    <%= image_tag(@user.image_url) if @user.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+     </p>
+
 
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>

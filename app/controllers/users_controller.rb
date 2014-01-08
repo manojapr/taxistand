@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    
   end
 
   def new
@@ -38,16 +38,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-
-
-    #@users = User.paginate(page: params[:page]).order(:quote)
-    #@users = User.order(:quote)
-
-    #@users = @users.select { |v| v.location == params[:location] } if !params[:location].blank?
-    @users = User.order(:quote).search(params[:search])
-    
+  def search
+    index
+    render :index
   end
+
+def index
+   @q = User.search(params[:q])
+  @users = @q.result(distinct: true)
+  
+end
 
   def destroy
     User.find(params[:id]).destroy
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :contact, :vehicle, :location, :quote, :password,
-                                   :password_confirmation, :image, :remote_image_url)
+                                   :password_confirmation, :image, :remote_image_url, :q)
     end
 
     def signed_in_user
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      redirect_to(root_url) unless current_user
     end
     
     def admin_user
