@@ -59,7 +59,7 @@ end
 
     def user_params
       params.require(:user).permit(:name, :email, :contact, :vehicle, :location, :quote, :password,
-                                   :password_confirmation, :image, :remote_image_url, :q)
+                                   :password_confirmation, :image, :remote_image_url, :q, :vehiclepic)
     end
 
     def signed_in_user

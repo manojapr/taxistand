@@ -1,19 +1,19 @@
 <% provide(:title, @user.name) %>
 
 
-  <div id="container">
+ 
     <div id="profile">  
       <h5> <%= @user.name %></h5>
-          <p>
 
+        <p>
           <i class="fa fa-star fa-2x"></i> 
-         
           <%=   @user.contact %>
-          </P>   
+        </P>  
+        <p> 
           <i class="fa fa-phone-square fa-2x"></i> 
-         
           <%=   @user.contact %>
-          <p>
+        </P>
+        <p>
           Vehicle: <%=  @user.vehicle %></br>
         </P>
         <p>
@@ -22,13 +22,11 @@
         </p>
         <p>
           <i class="fa fa-inr fa-2x"></i> 
-         
-           <%=  @user.quote %></br>
+          <%=  @user.quote %></br>
         </p>
         
-
     </div>
-  </div>
+ 
   
         
 
@@ -36,46 +34,27 @@
         
   
 <div class="row">
-  <aside class="span4">
+  <aside class="span50">
     <section>
       <h1>
        
         <p>
-        <div>
+        <div class="profilepic">
         <%= image_tag  @user.image_url(:thumb) if @user.image? %>
         </div>
         </p>
-
-
-        <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-       
-        <p>
-        <div>
-        <%= image_tag  @user.image_url(:thumb) if @user.image? %>
-        </div>
-        </p>
-        
-        
-
-
-        
-        
-
-
-
-
-        
-        
-        
-        
-        
 
       </h1>
     </section>
-  </aside>
+</aside>
+
+
+  <div class="vehiclepic row span4">
+        <%= image_tag  @user.vehiclepic_url if @user.vehicle? %>
+  </div>
+
+
+
 <div class="span8">
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -90,12 +69,12 @@
 
 
 
-</br>
+</BR>
 </BR>
 
 
 <p>
-  <h4>
+<h4>
   All Reviews
 </h4>
 </p>
@@ -132,6 +111,9 @@
 
 
 
+
+
+
 <%= form_for([@user, @user.reviews.build]) do |f| %>
   
 
@@ -148,10 +130,12 @@
     <%= f.select( :rating, options_for_select(1..10)) %>
   </div>
   
-  <div >
+
     <%= f.submit "Post Review", class: "btn .btn-small btn-primary"  %>
-  </div>
+  
 <% end %>
+
+
 
 
 
