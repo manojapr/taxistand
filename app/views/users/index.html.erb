@@ -18,17 +18,17 @@
 
 
 
-<table class="table table-striped">  
-        <thead>  
-          <tr>  
-            <th></th> 
-            <th>Name</th>  
-            <th>Contact</th>  
-            <th>Vehicle</th>  
-            <th>location</th>  
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Vehicle</th>
+            <th>location</th>
             <th>Quote</th>
-          </tr>  
-        </thead>  
+          </tr>
+        </thead>
 
 
 <ul class="users">
@@ -37,18 +37,19 @@
     <% @users.each do |user| %>
       <tr>
 
-            <td><%= gravatar_for user, size: 52 %></td>  
-            <td><%= link_to user.name, user %></td>  
-            <td><%= link_to user.contact, user %></td>  
-            <td><%= link_to user.vehicle, user %></td>  
+            <td><%= gravatar_for user, size: 52 %></td>
+            <td><%= link_to user.name, user %></td>
+            <td><%= link_to user.contact, user %></td>
+            <td><%= link_to user.vehicle, user %></td>
             <td> <%= link_to user.location, user %></td>
             <td> <%= link_to user.quote, user %> </td>
-        
+
       </tr>
     <% end %>
   </tbody>
 </ul>
  </table>
+<%= will_paginate @styles %>
 
 
 

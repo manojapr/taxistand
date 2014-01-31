@@ -14,11 +14,11 @@
 
     <%= search_form_for @q, url: search_users_path, html: { method: :post }  do |f| %>
 
-    <div id="divB">  <h5> Pickup Location </h5> 
-      <%= f.select :location_eq, options_from_collection_for_select(User.all, "id", "name", @search.location_eq) %>
+    <div id="divB">  <h5> Pickup Location </h5>
+
       <%= f.text_field :location_cont %>
     </div>
-    
+
     <div id="divA"> <h5> Select Vehicle </h5>
       <%= f.text_field :vehicle_cont %>
     </div>
@@ -28,8 +28,8 @@
       <%= submit_tag "Search Taxi", :name => nil, class: "btn btn btn-primary " %>
     </div>
 
-    <% end %> 
-    
+    <% end %>
+
   </div>
 
  </br></br></br>
@@ -41,34 +41,34 @@
 
 
 
-   
+
       <div id="andapp">
 
         Download our Android App Here
         <%= link_to(image_tag("appdownload.png", :size => "100x100"), "http://www.facebook.com") %>
 
       </div>
- 
-   
-
-    
 
 
 
-    <div id="signup">  
+
+
+
+
+    <div id="signup">
     <h5> Want to register your vehicle</h5>
-    <%= button_to "Sign up", new_user_registration_path, 
+    <%= button_to "Sign up", new_user_registration_path,
       :class => "btn btn-success btn-lg", :method => :get %>
 
-    
+
     <h5> Already a registered User </h5>
 
-    <%= button_to "Log in", new_user_session_path, 
+    <%= button_to "Log in", new_user_session_path,
       :class => "btn btn-info btn-lg", :method => :get %>
 
     </div>
 
-  
+
 
 
 

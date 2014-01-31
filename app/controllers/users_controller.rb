@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-  
+
 
   def show
   	@user = User.find(params[:id])
-    
+
   end
 
   def new
@@ -45,8 +45,8 @@ class UsersController < ApplicationController
 
 def index
    @q = User.search(params[:q])
-  @users = @q.result(distinct: true)
-  
+  @users = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 5)
+
 end
 
   def destroy
@@ -73,7 +73,7 @@ end
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user
     end
-    
+
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
