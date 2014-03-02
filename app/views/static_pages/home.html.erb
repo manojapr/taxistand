@@ -16,8 +16,11 @@
 
     <div id="divB">  <h5> Pickup Location </h5>
 
-      <%= f.text_field :location_cont %>
+      <%= f.text_field :location_cont, "data-autocomplete" => users_autocomplete_users_location_path %>
+
+
     </div>
+
 
     <div id="divA"> <h5> Select Vehicle </h5>
       <%= f.text_field :vehicle_cont %>
@@ -33,6 +36,7 @@
   </div>
 
  </br></br></br>
+
 
 
 

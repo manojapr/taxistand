@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :microposts, dependent: :destroy
+
   has_many :reviews
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
@@ -12,13 +12,13 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
-              
+
 
  mount_uploader :image, ImageUploader
  mount_uploader :vehiclepic, VehiclepicUploader
 
 
- 
+
   validates :password, length: { minimum: 6 }
 
 
@@ -31,10 +31,6 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def feed
-    # This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
-  end
 
     private
 

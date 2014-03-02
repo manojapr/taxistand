@@ -1,16 +1,16 @@
 <% provide(:title, @user.name) %>
 
 
- 
-    <div id="profile">  
+
+    <div id="profile">
       <h5> <%= @user.name %></h5>
 
         <p>
-          <i class="fa fa-star fa-2x"></i> 
+          <i class="fa fa-star fa-2x"></i>
           <%=   @user.contact %>
-        </P>  
-        <p> 
-          <i class="fa fa-phone-square fa-2x"></i> 
+        </P>
+        <p>
+          <i class="fa fa-phone-square fa-2x"></i>
           <%=   @user.contact %>
         </P>
         <p>
@@ -21,23 +21,23 @@
           <%= @user.location %></br>
         </p>
         <p>
-          <i class="fa fa-inr fa-2x"></i> 
+          <i class="fa fa-inr fa-2x"></i>
           <%=  @user.quote %></br>
         </p>
-        
+
     </div>
- 
-  
-        
 
 
-        
-  
+
+
+
+
+
 <div class="row">
   <aside class="span50">
     <section>
       <h1>
-       
+
         <p>
         <div class="profilepic">
         <%= image_tag  @user.image_url(:thumb) if @user.image? %>
@@ -55,16 +55,6 @@
 
 
 
-<div class="span8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
-</div>
 
 
 
@@ -84,13 +74,13 @@
             <th>Name</th>
             <th>Review</th>
             <th>Rating</th>
-           
+
         </tr>
    </thead>
-         
 
 
-        
+
+
 <% @user.reviews.each do |review| %>
 
 <tbody>
@@ -99,9 +89,9 @@
             <td><%= review.content %></td>
             <td><% review.rating.to_i.times do %>
             <%= image_tag "star-green.png", :size => "20x20" %>
-     
+
             <% end %></td>
-            
+
         </tr>
 </tbody>
 
@@ -115,7 +105,7 @@
 
 
 <%= form_for([@user, @user.reviews.build]) do |f| %>
-  
+
 
   <div class="field input-large">
     <%= f.label :Name %><br>
@@ -129,10 +119,10 @@
     <%= f.label :rating %><br>
     <%= f.select( :rating, options_for_select(1..10)) %>
   </div>
-  
+
 
     <%= f.submit "Post Review", class: "btn .btn-small btn-primary"  %>
-  
+
 <% end %>
 
 
