@@ -21,4 +21,19 @@
 //= require_tree .
 //= require bootstrap
 
+$(document).ready(function() {
+var $p=$('#red, #blue, #green');
+
+   $p.mouseenter(function() {
+       $(this).animate({
+           width: '+=10px'
+       });
+   });
+   $p.mouseleave(function() {
+       $(this).animate({
+           width: '-=10px'
+       });
+   });
+});
+
 

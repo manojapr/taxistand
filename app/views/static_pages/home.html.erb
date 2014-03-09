@@ -1,11 +1,12 @@
 
+<div class = "containeer">
+
 
 </br>
 </br>
 </Br>
 
-
-<h3> India's first virtual taxistand. Now hire a taxi with least fare without any advance booking!</h3></br>
+<h3> India's first virtual taxistand. Now take a ride with lowest fare without any advance booking!</h3></br>
 
 
 
@@ -16,14 +17,15 @@
 
     <div id="divB">  <h5> Pickup Location </h5>
 
-      <%= f.text_field :location_cont, "data-autocomplete" => users_autocomplete_users_location_path %>
+    <%= f.select :id_eq, User.all.collect{|c| [c.location, c.id]}, {include_blank: true}%>
 
 
     </div>
 
 
     <div id="divA"> <h5> Select Vehicle </h5>
-      <%= f.text_field :vehicle_cont %>
+      <%= f.select :id_eq, User.all.collect{|c| [c.vehicle, c.id]}, {include_blank: true}%>
+
     </div>
 
 
@@ -48,8 +50,11 @@
 
       <div id="andapp">
 
-        Download our Android App Here
-        <%= link_to(image_tag("appdownload.png", :size => "100x100"), "http://www.facebook.com") %>
+        <h5>Download our Android App Here</h5>
+        <%= link_to(image_tag("appdownload.png", :size => "100x100"), "http://www.facebook.com") %></br> </br>
+
+        <h5>Download our IOS App Here</h5>
+        <%= link_to(image_tag("iosapp.png", :size => "100x100"), "http://www.facebook.com") %>
 
       </div>
 
@@ -70,8 +75,11 @@
     <%= button_to "Log in", new_user_session_path,
       :class => "btn btn-info btn-lg", :method => :get %>
 
+
+
     </div>
 
+ </div>
 
 
 
